@@ -204,7 +204,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"query\": \"query ($patientId: ID!) {\\\\n  patientAppointments(patientId: $patientId, includePast: true) {\\\\n    id\\\\n    doctorName\\\\n    scheduledAt\\\\n    status\\\\n  }\\\\n}\",\n  \"variables\": {\n    \"patientId\": \"patient1\"\n  }\n}"
+          "raw": "{\"query\": \"query ($patientId: ID!) { patientAppointments(patientId: $patientId, includePast: true) { id doctorName scheduledAt status } }\", \"variables\": {\"patientId\": \"patient1\"}}"
         }
       },
       "response": []
@@ -245,8 +245,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"query\": \"query {\\\\n  myUpcomingAppointments {\\\\n    id\\\\n    doctorName\\\\n    scheduledAt\\\\n    notes\\\\n  }\\\\n}\",\n  \"variables\": {}\n}"
-        }
+          "raw": "{\"query\": \"query { myUpcomingAppointments { id doctorName scheduledAt notes } }\", \"variables\": {}}"        }
       },
       "response": []
     },
