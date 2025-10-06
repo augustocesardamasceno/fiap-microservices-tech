@@ -1,0 +1,17 @@
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/SchedulingServiceApplication.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/service/NotificationPublisher.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/graphql/AppointmentGraphQLController.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/messaging/AppointmentNotificationPayload.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/service/AppointmentService.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/repository/AppointmentRepository.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/config/SecurityConfig.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/web/controller/AppointmentController.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/web/dto/AppointmentResponse.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/domain/exception/NotFoundException.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/config/GraphQlConfig.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/config/RabbitConfig.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/domain/enums/AppointmentStatus.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/domain/entity/Appointment.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/web/controller/RestExceptionHandler.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/web/dto/CreateAppointmentRequest.java
+/home/augusto/fiap-pos/microservice-tech/scheduling-service/src/main/java/com/fiap/techchallenge/scheduling/web/dto/UpdateAppointmentRequest.java

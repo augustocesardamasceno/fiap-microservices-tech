@@ -1,0 +1,352 @@
+{
+  "info": {
+    "_postman_id": "f8c3e44d-1e9f-4e0f-8dc2-1b4b62fa6f6c",
+    "name": "FIAP Tech Challenge Fase 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Coleção com exemplos de uso dos serviços de agendamento e notificações."
+  },
+  "item": [
+    {
+      "name": "Scheduling - Criar Consulta",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/api/appointments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "doctor1"
+            },
+            {
+              "key": "password",
+              "value": "doctor123"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientId\": \"patient1\",\n  \"patientName\": \"João Silva\",\n  \"patientEmail\": \"joao.silva@example.com\",\n  \"patientPhone\": \"+5511999999999\",\n  \"doctorId\": \"dr-001\",\n  \"doctorName\": \"Dra. Maria Souza\",\n  \"scheduledAt\": \"2025-06-01T09:00:00\",\n  \"notes\": \"Consulta de retorno anual\"\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Scheduling - Atualizar Consulta",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/api/appointments/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments",
+            "1"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "nurse1"
+            },
+            {
+              "key": "password",
+              "value": "nurse123"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"scheduledAt\": \"2025-06-01T10:00:00\",\n  \"notes\": \"Paciente solicitou ajuste de hor\\u00e1rio\"\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Scheduling - Buscar Consultas Por Paciente",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/appointments?patientId=patient1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments"
+          ],
+          "query": [
+            {
+              "key": "patientId",
+              "value": "patient1"
+            }
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "doctor1"
+            },
+            {
+              "key": "password",
+              "value": "doctor123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Scheduling - Minhas Consultas",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/appointments/mine?includePast=false",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "appointments",
+            "mine"
+          ],
+          "query": [
+            {
+              "key": "includePast",
+              "value": "false"
+            }
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "patient1"
+            },
+            {
+              "key": "password",
+              "value": "patient123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Scheduling - GraphQL Patient Appointments",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/graphql",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "graphql"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "doctor1"
+            },
+            {
+              "key": "password",
+              "value": "doctor123"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"query ($patientId: ID!) {\\\\n  patientAppointments(patientId: $patientId, includePast: true) {\\\\n    id\\\\n    doctorName\\\\n    scheduledAt\\\\n    status\\\\n  }\\\\n}\",\n  \"variables\": {\n    \"patientId\": \"patient1\"\n  }\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Scheduling - GraphQL Minhas Consultas Futuras",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/graphql",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "graphql"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "patient1"
+            },
+            {
+              "key": "password",
+              "value": "patient123"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"query {\\\\n  myUpcomingAppointments {\\\\n    id\\\\n    doctorName\\\\n    scheduledAt\\\\n    notes\\\\n  }\\\\n}\",\n  \"variables\": {}\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Todas as Notificações",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/notifications",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "notifications"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "nurse1"
+            },
+            {
+              "key": "password",
+              "value": "nurse123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Minhas Notificações",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/notifications/mine",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "notifications",
+            "mine"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "patient1"
+            },
+            {
+              "key": "password",
+              "value": "patient123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Detalhes",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/notifications/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "notifications",
+            "1"
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "doctor1"
+            },
+            {
+              "key": "password",
+              "value": "doctor123"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
